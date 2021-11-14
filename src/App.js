@@ -1,31 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import './Counter';
+import './Home'
+
 
 import {
   BrowserRouter as Router,
-  Switch,
+  Link,
   Route,
 } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Welcome to the Counter App.
-        </p>
-        <a
-          className="App-link"
-          // href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Counter
-        </a>
-      </header>
-    </div>
-  );
+    <Router> 
+      <NavBar />  
+      <div className="App" style={{ backgroundImage: `url(${Image})` }}>  
+      <Switch>     
+        <Route path='/' exact component={Home}/>
+        <Route path='/counter' exact component={Counter}/>
+      </Switch>  
+      </div>
+    </Router> 
+  )
 }
 
 export default App;
